@@ -20,7 +20,7 @@
   <body>
     
 
-    <div class="bg"></div>
+    <div class="topimage"></div>
 
     <div class="jumbotron">
       <h1>Bootstrap Jumbotron</h1>
@@ -42,7 +42,7 @@
     <div class="jumbotron">
       <h1>Bootstrap Jumbotron</h1>
 
-      <div class="bg2"></div>
+      <div class="secondimage"></div>
       
       <p class="lead">+ Parallax Effect using jQuery</p>
     </div>
@@ -73,9 +73,6 @@
       <hr>
       <div class="row">
         <h2>Page Content</h2>
-        <input type="range" min="0" max="100" step="10" id="inp" />
-
-        <img src="images/dredd.JPG" height="200px" width="200px" id="img" />
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
         Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
@@ -129,29 +126,42 @@
           // $('.bg').css('height', (jumboHeight-scrolled) + 'px');
           
       }
-      function parallax2(){
+      function secondPicture(){
           var scrolled = $(window).scrollTop();
-          var y = document.getElementsByClassName('bg2');
-          var aNode2 = y[0];
-          // if(scrolled < 100){
-          // aNode2.setAttribute("style", "-webkit-filter:grayscale(" + scrolled + "%)");
-          // aNode2.setAttribute("style", "-webkit-filter:blur(" + scrolled/50 + "px)");
+          var y = document.getElementsByClassName('secondimage');
+          var aNode = y[0];
+          aNode.style.height = (scrolled/2.5) + 'px';
+
+
+          // if(scrolled < 150){
+          // // aNode2.setAttribute("style", "-webkit-filter:grayscale(" + scrolled + "%)");
+          // // aNode2.setAttribute("style", "-webkit-filter:blur(" + scrolled/50 + "px)");
+          // console.log("counting value less then 150 "+scrolled);
+          // aNode.style.height = (scrolled/2.5) + 'px';
+          
+          // } else if(scrolled > 150 && scrolled <   200){
+          //   console.log("Tween 150 and 200" +scrolled)
+          
+          // } else {
+          //   // x * -1;
+          //   aNode.style.height = (scrolled*-1) + 'px';
+          //   console.log("counting value more then 200 "+scrolled);
           // }
-          aNode2.style.height = (scrolled/2.5) + 'px';
+         
         
             
       }
 
-      function counting(){
+      function topPicture(){
           var scrolled = $(window).scrollTop();
-          var y = document.getElementsByClassName('bg');
+          var y = document.getElementsByClassName('topimage');
           var aNode = y[0];
           if(scrolled < 100){
           aNode.setAttribute("style", "-webkit-filter:grayscale(" + scrolled + "%)");
           // aNode.setAttribute("style", "-webkit-filter:blur(" + scrolled/50 + "px)");     can't get tow at the same time
           }
           aNode.style.height = (jumboHeight-scrolled) + 'px';
-          console.log("counting value "+scrolled);
+          
           
       }
 
@@ -159,9 +169,9 @@
 
       $(window).scroll(function(e){
           parallax();
-          parallax2();
-          counting();
-    
+          secondPicture();
+          topPicture();
+      
 
       });
     </script>
