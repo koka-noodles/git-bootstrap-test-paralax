@@ -63,6 +63,9 @@
         Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
         dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
         Aliquam in felis sit amet augue.
+        <p>Try the scrollbar in div.</p>
+
+       
         
       </div>
 
@@ -70,6 +73,10 @@
       <hr>
       <div class="row">
         <h2>Page Content</h2>
+        <input type="range" min="0" max="100" step="10" id="inp" />
+
+        <img src="images/dredd.JPG" height="200px" width="200px" id="img" />
+
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
         Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
         dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
@@ -84,6 +91,13 @@
       <div class="row">
           <div class="col-md-12 text-center"><p>The End.</p></div>
         </div>
+
+        <div>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+        <br><br>
+        'Whenever you feel like criticizing anyone,' he told me, just remember that all the people in this world haven't had the advantages that you've had.'</div>
+
+        <p>Scrolled <span id="demo">0</span> times.</p>
+
     </div>
 
      
@@ -95,26 +109,53 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
+
+
+
+
+
       var jumboHeight = $('.jumbotron').outerHeight();
+      var x = 0;
+
+      function myFunction() {
+          document.getElementById("demo").innerHTML = x += 1;
+          document.getElementById("img").setAttribute("style", "-webkit-filter:grayscale(" + x + "%)");
+          // console.log("the function value "+x);
+      }
+
+
       function parallax(){
           var scrolled = $(window).scrollTop();
           $('.bg').css('height', (jumboHeight-scrolled) + 'px');
-          console.log(scrolled);
+          
       }
       function parallax2(){
           var scrolled = $(window).scrollTop();
           $('.bg2').css('height', scrolled/2.5 + 'px');
-          $('.bg2').css('-webkit-filter: blur(', scrolled/100 + 'px) brightness(0.5)');
-          
-          console.log("p2"+scrolled);
-          console.log('-webkit-filter: blur(', scrolled/100 + 'px) brightness(0.5)');
+            
       }
+
+      function counting(){
+          var scrolled = $(window).scrollTop();
+          var y = document.getElementsByClassName('bg');
+          var aNode = y[0];
+          aNode.setAttribute("style", "-webkit-filter:grayscale(" + scrolled + "%)");
+          aNode.style.height = (jumboHeight-scrolled) + 'px';
+          console.log("class name "+y[0]);
+          // console.log("counting this value "+scrolled);
+      }
+
+     
 
       $(window).scroll(function(e){
           parallax();
           parallax2();
+          counting();
+          myFunction();
       });
     </script>
+
+
 
 
   </body>
