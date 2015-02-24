@@ -160,8 +160,8 @@
           aNode.setAttribute("style", "-webkit-filter:grayscale(" + scrolled + "%)");
           // aNode.setAttribute("style", "-webkit-filter:blur(" + scrolled/50 + "px)");     can't get tow at the same time
           }
-          aNode.style.height = (jumboHeight-scrolled) + 'px';
-          
+          // aNode.style.height = (jumboHeight-scrolled) + 'px';
+          $('.topimage').css('height', (jumboHeight-scrolled) + 'px');
           
       }
 
