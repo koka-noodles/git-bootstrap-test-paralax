@@ -18,7 +18,7 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    
 
     <div class="topimage"></div>
 
@@ -123,12 +123,11 @@
 
       function parallax(){
           var scrolled = $(window).scrollTop();
-          $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+          // $('.bg').css('height', (jumboHeight-scrolled) + 'px');
           
       }
       function secondPicture(){
           var scrolled = $(window).scrollTop();
-<<<<<<< HEAD
           var y = document.getElementsByClassName('secondimage');
           var aNode = y[0];
           aNode.style.height = (scrolled/2.5) + 'px';
@@ -150,9 +149,6 @@
           // }
          
         
-=======
-          $('.bg2').css('height', scrolled/2.5 + 'px');
->>>>>>> parent of e5b1627... ready for a clean up
             
       }
 
@@ -160,31 +156,23 @@
           var scrolled = $(window).scrollTop();
           var y = document.getElementsByClassName('topimage');
           var aNode = y[0];
+          if(scrolled < 100){
           aNode.setAttribute("style", "-webkit-filter:grayscale(" + scrolled + "%)");
+          // aNode.setAttribute("style", "-webkit-filter:blur(" + scrolled/50 + "px)");     can't get tow at the same time
+          }
           aNode.style.height = (jumboHeight-scrolled) + 'px';
-<<<<<<< HEAD
           
           
-=======
-          console.log("class name "+y[0]);
-          // console.log("counting this value "+scrolled);
->>>>>>> parent of e5b1627... ready for a clean up
       }
 
      
 
       $(window).scroll(function(e){
           parallax();
-<<<<<<< HEAD
           secondPicture();
           topPicture();
       
 
-=======
-          parallax2();
-          counting();
-          myFunction();
->>>>>>> parent of e5b1627... ready for a clean up
       });
     </script>
 
