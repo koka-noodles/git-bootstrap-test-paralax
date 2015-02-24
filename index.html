@@ -18,7 +18,7 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    
 
     <div class="bg"></div>
 
@@ -126,12 +126,19 @@
 
       function parallax(){
           var scrolled = $(window).scrollTop();
-          $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+          // $('.bg').css('height', (jumboHeight-scrolled) + 'px');
           
       }
       function parallax2(){
           var scrolled = $(window).scrollTop();
-          $('.bg2').css('height', scrolled/2.5 + 'px');
+          var y = document.getElementsByClassName('bg2');
+          var aNode2 = y[0];
+          // if(scrolled < 100){
+          // aNode2.setAttribute("style", "-webkit-filter:grayscale(" + scrolled + "%)");
+          // aNode2.setAttribute("style", "-webkit-filter:blur(" + scrolled/50 + "px)");
+          // }
+          aNode2.style.height = (scrolled/2.5) + 'px';
+        
             
       }
 
@@ -139,10 +146,13 @@
           var scrolled = $(window).scrollTop();
           var y = document.getElementsByClassName('bg');
           var aNode = y[0];
+          if(scrolled < 100){
           aNode.setAttribute("style", "-webkit-filter:grayscale(" + scrolled + "%)");
+          // aNode.setAttribute("style", "-webkit-filter:blur(" + scrolled/50 + "px)");     can't get tow at the same time
+          }
           aNode.style.height = (jumboHeight-scrolled) + 'px';
-          console.log("class name "+y[0]);
-          // console.log("counting this value "+scrolled);
+          console.log("counting value "+scrolled);
+          
       }
 
      
@@ -151,7 +161,8 @@
           parallax();
           parallax2();
           counting();
-          myFunction();
+    
+
       });
     </script>
 
