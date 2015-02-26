@@ -114,6 +114,7 @@
 
       var jumboHeight = $('.jumbotron').outerHeight();
       var x = 0;
+      var piviot = 0;
 
       function myFunction() {
           document.getElementById("demo").innerHTML = x += 1;
@@ -135,7 +136,8 @@
           var inverscroll = (scrolled * -1)/100;
 
           if(scrolled < 50){
-          aNode.setAttribute("style", "-webkit-filter: blur(" + scrolled/10 + "px)");
+          aNode.setAttribute("style", "-webkit-filter: blur(" + scrolled/3 + "px)"); 
+          aNode.setAttribute("style", "-webkit-filter: blur(" + 7 + "px)"); 
 
           console.log("Blur amount "+scrolled/10);
 
