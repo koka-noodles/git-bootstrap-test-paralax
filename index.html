@@ -17,6 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+  
   <body>
     
 
@@ -116,7 +117,7 @@
 
       function myFunction() {
           document.getElementById("demo").innerHTML = x += 1;
-          document.getElementById("img").setAttribute("style", "-webkit-filter:grayscale(" + x + "%)");
+          // document.getElementById("img").setAttribute("style", "-webkit-filter:grayscale(" + x + "%)");
           // console.log("the function value "+x);
       }
 
@@ -130,7 +131,25 @@
           var scrolled = $(window).scrollTop();
           var y = document.getElementsByClassName('secondimage');
           var aNode = y[0];
-          aNode.style.height = (scrolled/2.5) + 'px';
+
+          var inverscroll = (scrolled * -1)/100;
+
+          if(scrolled < 50){
+          aNode.setAttribute("style", "-webkit-filter: blur(" + scrolled/10 + "px)");
+
+          console.log("Blur amount "+scrolled/10);
+
+          piviot = scrolled/10;
+
+          }else if(scrolled > 50){
+
+          aNode.setAttribute("style", "-webkit-filter: blur(" + (piviot+inverscroll) + "px)"); 
+
+          console.log("unblur "+inverscroll+" piviot "+piviot);
+          }
+          $('.secondimage').css('height', (scrolled/2.5) + 'px');
+          console.log("Scroll "+scrolled);
+          
 
 
           // if(scrolled < 150){
@@ -138,7 +157,7 @@
           // // aNode2.setAttribute("style", "-webkit-filter:blur(" + scrolled/50 + "px)");
           // console.log("counting value less then 150 "+scrolled);
           // aNode.style.height = (scrolled/2.5) + 'px';
-          
+          // aNode.style.height = (scrolled/2.5) + 'px';
           // } else if(scrolled > 150 && scrolled <   200){
           //   console.log("Tween 150 and 200" +scrolled)
           
@@ -158,7 +177,7 @@
           var aNode = y[0];
           if(scrolled < 100){
           aNode.setAttribute("style", "-webkit-filter:grayscale(" + scrolled + "%)");
-          // aNode.setAttribute("style", "-webkit-filter:blur(" + scrolled/50 + "px)");     can't get tow at the same time
+          // aNode.setAttribute("style", "-webkit-filter:blur(" + scrolled/50 + "px)");     can't get two at the same time
           }
           // aNode.style.height = (jumboHeight-scrolled) + 'px';
           $('.topimage').css('height', (jumboHeight-scrolled) + 'px');
