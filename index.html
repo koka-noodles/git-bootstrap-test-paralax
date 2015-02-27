@@ -29,6 +29,18 @@
       <h1>Bootstrap Jumbotron</h1>
       <p class="lead">+ Parallax Effect using jQuery</p>
     </div>
+    
+    <div class="container-fluid"> 
+      <div class="redBrick">
+        <h2>Red</h2>
+      </div>    
+    </div>
+
+    <div class="container-fluid"> 
+      <div class="blueBrick">
+        <h2>Blue</h2>
+      </div>    
+    </div>
 
     <div class="container">
       <div class="row">
@@ -57,14 +69,15 @@
     </br>
 
     <div class="container-fluid">  
-      <div id="blue" class="row">
-        <h2>Page Content</h2>
+      <div id="gray" class="row">
+        <h2>Gray</h2>
       </div>
     </div> 
 
     <div class="jumbotron">
-      <h1>Bootstrap Jumbotron do nut</h1>
       <div class="donut"></div> 
+      <h1>Bootstrap Jumbotron do nut</h1>
+      
       <div id="textDiv"></div>
       <p class="lead">+ Parallax Effect using jQuery</p>
     </div>
@@ -95,7 +108,7 @@
     </div>
 
     <div class="container-fluid">  
-      <div id="blue" class="row">
+      <div id="gray" class="row">
         <h2>Page Content</h2>
       </div>
     </div> 
@@ -163,7 +176,7 @@
           aNode.setAttribute("style", "-webkit-filter: blur(" + scrolled/3 + "px)"); 
           aNode.setAttribute("style", "-webkit-filter: blur(" + 7 + "px)"); 
           $('.secondimage').css('height', (scrolled/2.5) + 'px');
-          console.log("Blur amount "+scrolled/10);
+          // console.log("Blur amount "+scrolled/10);
 
           piviot = scrolled/10;
 
@@ -171,7 +184,7 @@
 
           aNode.setAttribute("style", "-webkit-filter: blur(" + (piviot+inverscroll) + "px)"); 
           $('.secondimage').css('height', (scrolled/2.5) + 'px');
-          console.log("unblur "+inverscroll+" piviot "+piviot);
+          // console.log("unblur "+inverscroll+" piviot "+piviot);
           }
 
           
@@ -215,11 +228,10 @@
         var scrolled = $(window).scrollTop();
         var y = document.getElementsByClassName('donut');
         var aNode = y[0];
-        if(scrolled < 1200){
-          $('.donut').css('height', (scrolled/5) + 'px');
-        // $('.donut').css('top', (scrolled/2.5) + 'px');
-        div.textContent = scrolled/5;
-        var text = div.textContent;
+        if(scrolled > 700){
+          $('.donut').css('height', (scrolled/5) + 'px'); // 700/5 is 140 the size of the image
+          div.textContent = scrolled/5;
+          var text = div.textContent;
         }        
       }
 

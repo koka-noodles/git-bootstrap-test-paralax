@@ -23,10 +23,10 @@
 .donut {
   background: url('../images/donut.JPG') no-repeat center center;
   width: 100%;
-  height: 100px;
+  height: 140px;
   z-index: -1;
   position: absolute;
-  top: 1300px;
+  top: 1200px;
 }
 
 .jumbotron {
@@ -42,8 +42,20 @@ body {
     /*background-color:rgba(65, 246, 246, 0.54);*/
 }
 
-#blue {
-    background-color: #B0D7FF;
+.redBrick {
+    background-color: #BB2318;
+/*    background-color: #75AB00;*/
+    /*background-color:rgba(65, 246, 246, 0.54);*/
+}
+
+.blueBrick {
+    background-color: blue;
+/*    background-color: #75AB00;*/
+    /*background-color:rgba(65, 246, 246, 0.54);*/
+}
+
+#gray {
+    background-color: #23C9FF;
 /*    background-color: #75AB00;*/
     /*background-color:rgba(65, 246, 246, 0.54);*/
 }
