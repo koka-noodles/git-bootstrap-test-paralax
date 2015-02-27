@@ -20,6 +20,15 @@
   z-index: -1;
 }
 
+.donut {
+  background: url('../images/donut.JPG') no-repeat center center;
+  width: 100%;
+  height: 100px;
+  z-index: -1;
+  position: absolute;
+  top: 1300px;
+}
+
 .jumbotron {
   height: 350px;
   color: white;
@@ -28,9 +37,19 @@
 }
 
 body {
-    background-color: yellow;
+    background-color: #E8E8E8;
 /*    background-color: #75AB00;*/
     /*background-color:rgba(65, 246, 246, 0.54);*/
+}
+
+#blue {
+    background-color: #B0D7FF;
+/*    background-color: #75AB00;*/
+    /*background-color:rgba(65, 246, 246, 0.54);*/
+}
+
+#textDiv {
+   font-size: 250%;
 }
 
 
